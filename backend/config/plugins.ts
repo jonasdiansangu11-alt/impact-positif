@@ -1,4 +1,6 @@
-export default ({ env }) => ({
+import type { Core } from '@strapi/strapi';
+
+export default ({ env }: Core.Config.Shared.ConfigParams) => ({
   upload: {
     config: {
       provider: 'cloudinary',

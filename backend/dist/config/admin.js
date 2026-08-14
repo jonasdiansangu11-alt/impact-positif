@@ -13,8 +13,9 @@ const config = ({ env }) => ({
         },
     },
     secrets: {
-        encryptionKey: env('ENCRYPTION_KEY'),
+        encryptionKey: env('ENCRYPTION_KEY', 'default-encryption-key-change-me'),
     },
+    serveAdminPanel: true,
     flags: {
         nps: env.bool('FLAG_NPS', true),
         promoteEE: env.bool('FLAG_PROMOTE_EE', true),

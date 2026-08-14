@@ -13,8 +13,9 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => 
     },
   },
   secrets: {
-    encryptionKey: env('ENCRYPTION_KEY')!,
+    encryptionKey: env('ENCRYPTION_KEY', 'default-encryption-key-change-me'),
   },
+  serveAdminPanel: true,
   flags: {
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
