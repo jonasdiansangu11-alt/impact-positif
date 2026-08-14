@@ -1,0 +1,36 @@
+{
+    "kind": "collectionType",
+    "collectionName": "realizations",
+    "info": {
+        "singularName": "realization",
+        "pluralName": "realizations",
+        "displayName": "Realization"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "category": {
+            "type": "string"
+        },
+        "summary": {
+            "type": "text"
+        },
+        "location": {
+            "type": "string"
+        },
+        "image": {
+            "type": "media",
+            "allowedTypes": ["images"],
+            "multiple": false
+        },
+        "videoUrl": {
+            "type": "string"
+        }
+    }
+}

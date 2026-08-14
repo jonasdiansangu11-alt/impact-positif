@@ -1,0 +1,42 @@
+{
+    "kind": "singleType",
+    "collectionName": "featured_projects",
+    "info": {
+        "singularName": "featured-project",
+        "pluralName": "featured-projects",
+        "displayName": "Projet Phare"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true
+        },
+        "client": {
+            "type": "string"
+        },
+        "coverImage": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "galleryImages": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        }
+    }
+}

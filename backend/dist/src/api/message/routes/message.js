@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    routes: [
+        {
+            method: 'GET',
+            path: '/messages',
+            handler: 'message.find',
+            config: { policies: [] }
+        },
+        {
+            method: 'GET',
+            path: '/messages/:id',
+            handler: 'message.findOne',
+            config: { policies: [] }
+        },
+        {
+            method: 'POST',
+            path: '/messages',
+            handler: 'message.create',
+            config: { policies: [] }
+        }
+    ]
+};
