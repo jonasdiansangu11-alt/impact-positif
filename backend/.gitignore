@@ -7,7 +7,6 @@ npm-debug.log*
 
 # Builds
 build/
-dist/
 
 # Database
 .tmp/
