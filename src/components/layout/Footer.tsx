@@ -18,10 +18,10 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="md:col-span-1">
-          <div className="font-heading font-black text-3xl tracking-tight text-background-50">
-            <span className="text-red-600 font-extrabold drop-shadow-md">IMPACT</span><span className="text-white font-extrabold drop-shadow-md ml-1">POSITIF</span>
-          </div>
-          <p className="mt-4 text-background-100/70 text-sm leading-relaxed max-w-xs">
+          <Link to="/" className="inline-block cursor-pointer hover:opacity-90 transition-opacity">
+            <img src="/images/logo.png" alt="IMPACT POSITIF Logo" className="h-24 w-auto object-contain" />
+          </Link>
+          <p className="mt-6 text-background-100/70 text-sm leading-relaxed max-w-xs">
             Une Agence Internationale d'Expérience de Marque qui connecte les publics aux plus grandes marques du monde à travers des événements et expériences créatifs.
           </p>
           <div className="mt-6 flex items-center gap-2">

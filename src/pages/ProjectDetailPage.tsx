@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { getStrapiMediaUrl } from '../lib/api';
 
 // ─── Data : détail de chaque projet ───────────────────────────────────────────
 export const projectsData: Record<string, ProjectDetail> = {
@@ -265,7 +266,7 @@ export default function ProjectDetailPage() {
       {/* ── HERO COVER ── */}
       <div className="relative h-[70vh] min-h-[480px] overflow-hidden">
         <img
-          src={project.coverImage}
+          src={(typeof project.coverImage === 'string' ? project.coverImage : getStrapiMediaUrl(project.coverImage)) || project.coverImage}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -340,7 +341,7 @@ export default function ProjectDetailPage() {
                     className={`group relative overflow-hidden rounded-xl ${i === 0 ? 'col-span-2 aspect-[16/7]' : 'aspect-[4/3]'}`}
                   >
                     <img
-                      src={photo}
+                      src={(typeof photo === 'string' ? photo : getStrapiMediaUrl(photo)) || photo}
                       alt={`${project.title} — photo ${i + 1}`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -362,7 +363,7 @@ export default function ProjectDetailPage() {
               </h2>
               {project.videoUrl ? (
                 <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl border border-white/10 group">
-                  {project.videoUrl.endsWith('.mp4') ? (
+                  {typeof project.videoUrl === 'string' && project.videoUrl.endsWith('.mp4') ? (
                     <video
                       controls
                       autoPlay
@@ -373,7 +374,7 @@ export default function ProjectDetailPage() {
                     >
                       <source src={project.videoUrl} type="video/mp4" />
                     </video>
-                  ) : (
+                  ) : typeof project.videoUrl === 'string' && project.videoUrl.startsWith('http') && !project.videoUrl.includes('mp4') ? (
                     <iframe
                       src={project.videoUrl}
                       title={`Vidéo — ${project.title}`}
@@ -381,6 +382,17 @@ export default function ProjectDetailPage() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
+                  ) : (
+                    <video
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    >
+                      <source src={getStrapiMediaUrl(project.videoUrl) || project.videoUrl} type="video/mp4" />
+                    </video>
                   )}
                 </div>
               ) : (

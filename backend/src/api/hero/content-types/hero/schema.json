@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "heros",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heros",
+    "displayName": "Hero"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titlePrefix": {
+      "type": "string",
+      "default": "Nous sommes"
+    },
+    "titleHighlight1": {
+      "type": "string",
+      "default": "IMPACT"
+    },
+    "titleHighlight2": {
+      "type": "string",
+      "default": "POSITIF"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "videoFile": {
+      "type": "media",
+      "allowedTypes": ["videos"],
+      "multiple": false
+    },
+    "posterImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    }
+  }
+}

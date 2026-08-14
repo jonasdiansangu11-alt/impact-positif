@@ -1,0 +1,6 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="192" height="192" fill="#030712"/>
+<rect x="24" y="24" width="144" height="144" rx="24" fill="#111827" stroke="#DC2626" stroke-width="6"/>
+<text x="96" y="100" font-family="Arial, sans-serif" font-weight="900" font-size="75" fill="#DC2626" text-anchor="middle" dominant-baseline="middle">IP</text>
+<text x="96" y="145" font-family="Arial, sans-serif" font-weight="bold" font-size="15" fill="#F9FAFB" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">IMPACT</text>
+</svg>

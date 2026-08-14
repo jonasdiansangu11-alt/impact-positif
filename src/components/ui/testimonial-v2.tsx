@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { fetchTestimonials, getStrapiMediaUrl } from '../../lib/api';
 
 // --- Types ---
 interface Testimonial {
@@ -7,69 +8,8 @@ interface Testimonial {
   image: string;
   name: string;
   role: string;
+  avatar?: string;
 }
-
-// --- Data tailored to IMPACT POSITIF in RDC with Congolese Names & African Professionals ---
-const testimonials: Testimonial[] = [
-  {
-    text: "IMPACT POSITIF a transformé notre vision en réalité lors de notre forum annuel. Une logistique impeccable et une mise en scène technologique à couper le souffle à Kinshasa.",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Prisca Mwamba",
-    role: "Directrice Commerciale, Rawbank",
-  },
-  {
-    text: "La mise en œuvre de nos lancements de produits n'a jamais été aussi fluide. Une équipe congolaise proactive, créative et extrêmement réactive face à tous les défis stratégiques.",
-    image: "https://images.unsplash.com/photo-1507152832244-10d45a7e3575?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Jean-Paul Kabongo",
-    role: "Responsable Événements, Vodacom RDC",
-  },
-  {
-    text: "Un accompagnement d'exception du début à la fin. Ils ont su captiver notre public d'investisseurs et surpasser tous nos objectifs de communication corporative.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Dorcas Kabedi",
-    role: "Chef de Projet Marketing, Illicocash",
-  },
-  {
-    text: "Leur maîtrise de l'événementiel hybride et de la scénographie moderne a offert à nos partenaires internationaux une expérience immersive mémorable à Goma.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Dieudonné Lelo",
-    role: "Secrétaire Permanent, FEC",
-  },
-  {
-    text: "Une rigueur organisationnelle sans faille et une créativité sans limites qui font d'IMPACT POSITIF notre partenaire privilégié pour tous les sommets financiers en RDC.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Sarah Tshilombo",
-    role: "Directrice Marketing, Aurora RDC",
-  },
-  {
-    text: "Chaque détail a été soigné avec une précision chirurgicale. Les retours de nos invités de marque étaient unanimes : une expérience événementielle de classe mondiale.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Félix Ilunga",
-    role: "Directeur de la Communication, Airtel RDC",
-  },
-  {
-    text: "Une approche innovante qui a dynamisé l'engagement de notre public et grandement renforcé la résonance médiatique de nos lancements à Lubumbashi.",
-    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Rachel Nyembo",
-    role: "Directrice de Marque, Bracongo",
-  },
-  {
-    text: "Ils ont compris instantanément nos enjeux stratégiques complexes et ont livré une production sur mesure d'une élégance rare et d'un professionnalisme hors pair.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Jonathan Mpiana",
-    role: "Administrateur Délégué, Equity BCDC",
-  },
-  {
-    text: "Grâce à leur expertise unique en design d'expérience et en scénographie immersive, notre exposition de marque a battu tous les records d'audience à Kinshasa.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Grâce Mutombo",
-    role: "Responsable Relations Publiques, Africell RDC",
-  },
-];
-
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
 
 // --- Sub-Components ---
 const TestimonialsColumn = (props: {
@@ -94,7 +34,7 @@ const TestimonialsColumn = (props: {
         {[
           ...new Array(2).fill(0).map((_, index) => (
             <React.Fragment key={index}>
-              {props.testimonials.map(({ text, image, name, role }, i) => (
+              {props.testimonials.map(({ text, image, avatar, name, role }, i) => (
                 <motion.li 
                   key={`${index}-${i}`}
                   aria-hidden={index === 1 ? "true" : "false"}
@@ -123,7 +63,7 @@ const TestimonialsColumn = (props: {
                       <img
                         width={44}
                         height={44}
-                        src={image}
+                        src={(typeof (avatar || image) === 'string' ? (avatar || image) : getStrapiMediaUrl(avatar || image)) || avatar || image}
                         alt={`Avatar de ${name}`}
                         className="h-11 w-11 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-red-500/40 transition-all duration-300 ease-in-out"
                         referrerPolicy="no-referrer"
@@ -149,10 +89,23 @@ const TestimonialsColumn = (props: {
 };
 
 export default function TestimonialsSection() {
+  const [testimonialsData, setTestimonialsData] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    fetchTestimonials().then(data => {
+      if (data && data.length > 0) {
+        setTestimonialsData(data);
+      }
+    });
+  }, []);
+
+  const firstColumn = testimonialsData.slice(0, Math.ceil(testimonialsData.length / 3));
+  const secondColumn = testimonialsData.slice(Math.ceil(testimonialsData.length / 3), Math.ceil((testimonialsData.length / 3) * 2));
+  const thirdColumn = testimonialsData.slice(Math.ceil((testimonialsData.length / 3) * 2));
   return (
     <section 
       aria-labelledby="testimonials-heading"
-      className="bg-neutral-950 py-24 relative overflow-hidden border-y border-white/5"
+      className="bg-neutral-950 py-16 md:py-24 relative overflow-hidden border-y border-white/5"
     >
       {/* --- Dynamic and Beautiful Animated Background --- */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

@@ -13,29 +13,31 @@
   --color-background-900: oklch(0.15 0.012 300);
   --color-background-950: oklch(0.08 0.012 300);
 
-  --color-primary-50: oklch(0.97 0.02 25);
-  --color-primary-100: oklch(0.93 0.04 25);
-  --color-primary-200: oklch(0.86 0.09 25);
-  --color-primary-300: oklch(0.78 0.14 25);
-  --color-primary-400: oklch(0.68 0.18 25);
-  --color-primary-500: oklch(0.56 0.22 25);
-  --color-primary-600: oklch(0.48 0.22 25);
-  --color-primary-700: oklch(0.4 0.18 25);
-  --color-primary-800: oklch(0.32 0.14 25);
-  --color-primary-900: oklch(0.24 0.1 25);
-  --color-primary-950: oklch(0.16 0.07 25);
+  /* Primary: Mauve (Hue ~320) */
+  --color-primary-50: oklch(0.97 0.02 320);
+  --color-primary-100: oklch(0.93 0.05 320);
+  --color-primary-200: oklch(0.86 0.1 320);
+  --color-primary-300: oklch(0.75 0.15 320);
+  --color-primary-400: oklch(0.65 0.2 320);
+  --color-primary-500: oklch(0.55 0.22 320);
+  --color-primary-600: oklch(0.48 0.2 320);
+  --color-primary-700: oklch(0.4 0.18 320);
+  --color-primary-800: oklch(0.32 0.14 320);
+  --color-primary-900: oklch(0.24 0.1 320);
+  --color-primary-950: oklch(0.16 0.07 320);
 
-  --color-accent-50: oklch(0.97 0.02 20);
-  --color-accent-100: oklch(0.93 0.04 20);
-  --color-accent-200: oklch(0.86 0.09 20);
-  --color-accent-300: oklch(0.77 0.14 20);
-  --color-accent-400: oklch(0.66 0.18 20);
-  --color-accent-500: oklch(0.55 0.2 20);
-  --color-accent-600: oklch(0.47 0.19 20);
-  --color-accent-700: oklch(0.39 0.15 20);
-  --color-accent-800: oklch(0.31 0.11 20);
-  --color-accent-900: oklch(0.23 0.08 20);
-  --color-accent-950: oklch(0.16 0.05 20);
+  /* Accent: Red (Hue ~25) */
+  --color-accent-50: oklch(0.97 0.02 25);
+  --color-accent-100: oklch(0.93 0.04 25);
+  --color-accent-200: oklch(0.86 0.09 25);
+  --color-accent-300: oklch(0.77 0.14 25);
+  --color-accent-400: oklch(0.66 0.18 25);
+  --color-accent-500: oklch(0.56 0.22 25);
+  --color-accent-600: oklch(0.48 0.22 25);
+  --color-accent-700: oklch(0.4 0.18 25);
+  --color-accent-800: oklch(0.32 0.14 25);
+  --color-accent-900: oklch(0.24 0.1 25);
+  --color-accent-950: oklch(0.16 0.07 25);
 
   --color-foreground-50: oklch(0.98 0 0);
   --color-foreground-100: oklch(0.94 0 0);
@@ -111,3 +113,4 @@
   overflow: hidden;
 }
 
+@layer base { body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); } }

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mediatheques",
+  "info": {
+    "singularName": "mediatheque",
+    "pluralName": "mediatheques",
+    "displayName": "Mediatheque"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string"
+    },
+    "mediaType": {
+      "type": "enumeration",
+      "enum": [
+        "photo",
+        "video"
+      ],
+      "default": "photo",
+      "required": false
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}
