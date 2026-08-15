@@ -3548,7 +3548,6 @@ function HomeView() {
         <Marquee />
         <AdBanner position="home-middle" />
         <FeaturedProjects />
-        <FeaturedProjectHighlight />
         <TestimonialsSection />
         <AdBanner position="home-bottom" />
         <ZoneAction />
