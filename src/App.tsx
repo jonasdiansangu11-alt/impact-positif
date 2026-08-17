@@ -471,8 +471,7 @@ function Hero() {
             <div className="relative w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               {/* Left — Image */}
               <div className="hidden lg:block relative min-h-[600px]">
-                <img
-                  src="/images/forum.jpg"
+                <img loading="lazy" decoding="async" src="/images/forum.jpg"
                   alt="Événement IMPACT POSITIF"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -777,8 +776,7 @@ function Approach() {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
                 <div className="relative shrink-0">
                   <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-background-50 shadow-lg">
-                    <img
-                      src="/impact-event-photo.jpg"
+                    <img loading="lazy" decoding="async" src="/impact-event-photo.jpg"
                       alt="Jonas Diansangu"
                       className="w-full h-full object-cover"
                     />
@@ -877,8 +875,7 @@ function Marquee() {
         <div className="relative overflow-hidden w-full">
           <div className="flex gap-20 animate-marquee items-center whitespace-nowrap">
             {doubledBrands.map((brand, idx) => (
-              <img
-                key={`${brand.name}-${idx}`}
+              <img loading="lazy" decoding="async" key={`${brand.name}-${idx}`}
                 src={brand.src}
                 alt={brand.name}
                 className="h-10 md:h-14 object-contain transition-transform hover:scale-105 cursor-pointer mix-blend-multiply"
@@ -930,8 +927,7 @@ function FeaturedProjects() {
                 to={project.href}
                 className="group relative block overflow-hidden bg-black break-inside-avoid"
               >
-                <img
-                  src={project.image}
+                <img loading="lazy" decoding="async" src={project.image}
                   alt={project.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-auto block object-cover transition-transform duration-700 group-hover:scale-105"
@@ -1000,8 +996,7 @@ function ZoneAction() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img
-              src="/impact-event-photo.jpg"
+            <img loading="lazy" decoding="async" src="/impact-event-photo.jpg"
               alt="IMPACT POSITIF sur le terrain"
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
@@ -1137,8 +1132,7 @@ function CTA() {
         {/* ── RIGHT : Carte Afrique ─────────────────────────────── */}
         <div className="relative overflow-hidden flex items-center justify-center min-h-[340px] lg:min-h-0 bg-black">
           {/* Image carte Afrique avec RDC mise en valeur */}
-          <img
-            src="/africa-map-rdc.png"
+          <img loading="lazy" decoding="async" src="/africa-map-rdc.png"
             alt="Carte de l'Afrique — République Démocratique du Congo mise en valeur"
             className="absolute inset-0 w-full h-full object-contain"
             style={{ objectPosition: "center center" }}
@@ -1481,8 +1475,7 @@ Message: ${data.message || ''}`);
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src={slide.bgImage}
+                  <img loading="lazy" decoding="async" src={slide.bgImage}
                     alt={slide.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
@@ -1517,22 +1510,19 @@ Message: ${data.message || ''}`);
                       </span>
                       <div className="flex gap-6 items-center">
                         <div className="h-12 bg-background-50 rounded-lg px-3 py-1.5 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer shadow-lg">
-                          <img
-                            src="/images/rawbank.jpeg"
+                          <img loading="lazy" decoding="async" src="/images/rawbank.jpeg"
                             alt="Rawbank"
                             className="h-full object-contain mix-blend-multiply"
                           />
                         </div>
                         <div className="h-12 bg-background-50 rounded-lg px-3 py-1.5 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer shadow-lg">
-                          <img
-                            src="/images/illico.jpeg"
+                          <img loading="lazy" decoding="async" src="/images/illico.jpeg"
                             alt="Illicocash"
                             className="h-full object-contain mix-blend-multiply"
                           />
                         </div>
                         <div className="h-12 bg-background-50 rounded-lg px-3 py-1.5 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer shadow-lg">
-                          <img
-                            src="/images/aurora.jpeg"
+                          <img loading="lazy" decoding="async" src="/images/aurora.jpeg"
                             alt="Aurora RDC"
                             className="h-full object-contain mix-blend-multiply"
                           />
@@ -1592,8 +1582,7 @@ Message: ${data.message || ''}`);
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src={slide.bgImage}
+                  <img loading="lazy" decoding="async" src={slide.bgImage}
                     alt={slide.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
@@ -1756,8 +1745,7 @@ Message: ${data.message || ''}`);
             >
               {/* Background Image */}
               <div className="absolute inset-0 z-0">
-                <img
-                  src={slide.bgImage}
+                <img loading="lazy" decoding="async" src={slide.bgImage}
                   alt={slide.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
@@ -2180,8 +2168,7 @@ function RealisationsView() {
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
-                  <img
-                    src={slide.bgImage}
+                  <img loading="lazy" decoding="async" src={slide.bgImage}
                     alt={slide.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover scale-105"
@@ -2266,8 +2253,7 @@ function RealisationsView() {
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src={slide.bgImage}
+                  <img loading="lazy" decoding="async" src={slide.bgImage}
                     alt={slide.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
@@ -2443,8 +2429,7 @@ function RealisationsView() {
                     <source src={slide.bgVideo} type="video/mp4" />
                   </video>
                 ) : (
-                  <img
-                    src={slide.bgImage}
+                  <img loading="lazy" decoding="async" src={slide.bgImage}
                     alt={slide.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover scale-105"
@@ -2640,7 +2625,7 @@ function ContactView() {
           <div>
             {/* Dynamic Contact Image from Strapi */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-10 shadow-2xl">
-              <img src={contactImageUrl} alt="IMPACT POSITIF Contact" className="w-full h-full object-cover" />
+              <img loading="lazy" decoding="async" src={contactImageUrl} alt="IMPACT POSITIF Contact" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background-950/70 via-transparent to-transparent" />
             </div>
             <h3 className="text-2xl font-bold font-heading mb-6">
@@ -3072,8 +3057,7 @@ function PartenairesView() {
                       style={{ backgroundColor: partner.color }}
                     />
                     {partner.logoImg ? (
-                      <img
-                        src={partner.logoImg}
+                      <img loading="lazy" decoding="async" src={partner.logoImg}
                         alt={partner.name}
                         className={`w-10 h-10 object-contain transition-all duration-500 mix-blend-multiply ${
                           isHovered || isSelected
@@ -3150,8 +3134,7 @@ function PartenairesView() {
                         }}
                       >
                         {partner.logoImg ? (
-                          <img
-                            src={partner.logoImg}
+                          <img loading="lazy" decoding="async" src={partner.logoImg}
                             alt={partner.name}
                             className="w-8 h-8 object-contain mix-blend-multiply"
                           />
@@ -3214,8 +3197,7 @@ function PartenairesView() {
                         }}
                       >
                         {selectedPartner.logoImg ? (
-                          <img
-                            src={selectedPartner.logoImg}
+                          <img loading="lazy" decoding="async" src={selectedPartner.logoImg}
                             alt={selectedPartner.name}
                             className="w-10 h-10 object-contain mix-blend-multiply"
                           />
@@ -3502,8 +3484,7 @@ function FeaturedProjectHighlight() {
           {/* Cover Image */}
           <FadeInUp delay={0.2}>
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-              <img
-                src={coverUrl}
+              <img loading="lazy" decoding="async" src={coverUrl}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
@@ -3533,7 +3514,7 @@ function FeaturedProjectHighlight() {
                     if (!url) return null;
                     return (
                       <div key={i} className="rounded-lg overflow-hidden aspect-square">
-                        <img src={url} alt={`Galerie ${i + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                        <img loading="lazy" decoding="async" src={url} alt={`Galerie ${i + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
                       </div>
                     );
                   })}

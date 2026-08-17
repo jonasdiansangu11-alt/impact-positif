@@ -30,11 +30,19 @@
     <meta name="twitter:description" content="Créateurs d'événements d'envergure et activations de marque en RDC et à l'international." />
     <meta name="twitter:image" content="https://impactpositif.com/images/IMG_3294.jpg" />
     
+    <!-- Preconnect: Fonts & CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://impact-positif-api.onrender.com">
+    
+    <!-- Fonts: swap ensures text is visible immediately -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
+    
+    <!-- Icons: loaded async to not block rendering -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" media="print" onload="this.media='all'">
   </head>
   <body>
     <div id="root"></div>

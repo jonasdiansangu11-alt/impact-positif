@@ -9,11 +9,11 @@ export default function Preloader() {
   useEffect(() => {
     // Initial load
     if (document.readyState === 'complete') {
-      const timer = setTimeout(() => setLoading(false), 1200);
+      const timer = setTimeout(() => setLoading(false), 800);
       return () => clearTimeout(timer);
     } else {
       const handleLoad = () => {
-        setTimeout(() => setLoading(false), 1200);
+        setTimeout(() => setLoading(false), 800);
       };
       window.addEventListener('load', handleLoad);
       return () => window.removeEventListener('load', handleLoad);
@@ -23,7 +23,7 @@ export default function Preloader() {
   useEffect(() => {
     // Trigger on route change
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 800);
+    const timer = setTimeout(() => setLoading(false), 400);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 

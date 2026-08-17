@@ -103,6 +103,8 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : { ignored: ['**/*.mp4'] },
     },
     build: {
+      cssMinify: 'lightningcss',
+      sourcemap: false,
       rollupOptions: {
         output: {
           manualChunks(id) {
@@ -115,7 +117,10 @@ export default defineConfig(() => {
               }
               return 'vendor'; // all other node_modules
             }
-          }
+          },
+          assetFileNames: 'assets/[name]-[hash][extname]',
+          chunkFileNames: 'assets/[name]-[hash].js',
+          entryFileNames: 'assets/[name]-[hash].js',
         }
       },
       chunkSizeWarningLimit: 1000,
