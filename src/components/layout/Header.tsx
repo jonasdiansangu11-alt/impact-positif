@@ -257,14 +257,27 @@ export default function Header() {
               { label: "Prestataires", href: "/partenaires" },
               { label: "Boutique en ligne", href: "https://app.chariow.com/stores/store_lsrffcalbjtu/products?status=all" }
             ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-2xl font-semibold text-background-50 hover:text-red-500 transition-colors"
-              >
-                {item.label}
-              </a>
+              item.href.startsWith('http') ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-2xl font-semibold text-background-50 hover:text-red-500 transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-2xl font-semibold text-background-50 hover:text-red-500 transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
         </div>
