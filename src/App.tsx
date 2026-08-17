@@ -759,7 +759,7 @@ function Approach() {
   return (
     <section className="bg-background-50 py-16 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div className="sticky top-32">
+        <div className="lg:sticky lg:top-32 relative">
           <RevealText delay={0.1}>
             <span className="inline-block text-xs md:text-sm font-semibold tracking-[0.25em] text-primary-600 uppercase mb-6">
               Qui sommes-nous ?
