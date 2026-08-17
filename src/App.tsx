@@ -3,6 +3,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import MediathequePage from './pages/MediathequePage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Seo from './components/seo/Seo';
 import React, { useState, useEffect, useRef } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
@@ -757,66 +758,96 @@ function Approach() {
   return (
     <section className="bg-background-50 py-16 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div>
+        <div className="sticky top-32">
           <RevealText delay={0.1}>
             <span className="inline-block text-xs md:text-sm font-semibold tracking-[0.25em] text-primary-600 uppercase mb-6">
               Qui sommes-nous ?
             </span>
           </RevealText>
           <RevealText delay={0.25}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-foreground-950">
-              {aboutData?.whoAreWeTitle || "Notre agence marketing est spécialisée dans la communication et stratégie au Kongo-Central."}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-foreground-950 mb-6">
+              {aboutData?.whoAreWeTitle || "NOTRE IDENTITÉ"}
             </h2>
+          </RevealText>
+          
+          <RevealText delay={0.35}>
+            <div className="mt-8 p-6 lg:p-8 bg-white border border-background-200 rounded-2xl shadow-sm relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/5 rounded-bl-full transition-transform duration-500 group-hover:scale-110"></div>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
+                <div className="relative shrink-0">
+                  <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-background-50 shadow-lg">
+                    <img
+                      src="/impact-event-photo.jpg"
+                      alt="Jonas Diansangu"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 bg-primary-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+                    <i className="ri-medal-fill text-sm"></i>
+                  </div>
+                </div>
+                <div className="text-center sm:text-left">
+                  <h4 className="text-xl font-bold text-foreground-950 font-heading">JONAS DIANSANGU</h4>
+                  <p className="text-primary-600 font-semibold text-xs tracking-[0.2em] uppercase mt-1 mb-3">General Manager</p>
+                  <p className="text-sm text-foreground-700 leading-relaxed">
+                    Expert en stratégie et déploiement d'actions BTL avec une maîtrise pointue du marché du Kongo-Central. Son approche méthodique assure un ROI optimal pour nos partenaires.
+                  </p>
+                </div>
+              </div>
+            </div>
           </RevealText>
         </div>
 
-        <div className="lg:pt-6 space-y-8">
+        <div className="lg:pt-0 space-y-10">
           <RevealText delay={0.2}>
-            <p className="text-lg md:text-xl text-foreground-700 leading-relaxed">
-              {aboutData?.whoAreWeContent || "Implantée dans la ville de Matadi depuis 2015, notre présence locale nous a permis d’acquérir une expertise énorme sur les différents marchés et le comportement des consommateurs de cette province."}
+            <p className="text-lg md:text-xl text-foreground-700 leading-relaxed font-medium">
+              {aboutData?.whoAreWeContent || "Créée en 2015, IMPACT POSITIF est une Agence Conseil en Marketing spécialisée dans la communication, la stratégie marketing et l'accompagnement des entreprises. Nous prenons le temps de comprendre parfaitement la structure de nos clients, leurs atouts et leurs objectifs avant de proposer une solution sur-mesure, alignée sur leurs valeurs et leur image."}
             </p>
           </RevealText>
           
           <RevealText delay={0.3}>
-            <h3 className="text-lg font-bold text-foreground-950 mt-4">{aboutData?.ourRoleTitle || "NOTRE RÔLE"}</h3>
-            <p className="text-md md:text-lg text-foreground-700 leading-relaxed mt-2">
-              {aboutData?.ourRoleContent || "Grâce à notre équipe jeune et dynamique, nous avons la capacité d'intervenir partout où vous souhaitez communiquer sur vos produits et services, tout en nous engageant à fournir un travail de qualité, soigné, perfectionniste et toujours avec le souci du détail, c’est ça d’ailleurs notre particularité dans nos services d'action BTL et événementielle."}
-            </p>
+            <div className="bg-background-100 p-6 md:p-8 rounded-2xl border-l-4 border-primary-500">
+              <h3 className="text-xl font-bold text-foreground-950 flex items-center gap-3">
+                <i className="ri-focus-3-line text-primary-500"></i>
+                {aboutData?.ourRoleTitle || "NOTRE RÔLE"}
+              </h3>
+              <p className="text-md text-foreground-700 leading-relaxed mt-4">
+                {aboutData?.ourRoleContent || "Grâce à notre équipe jeune et dynamique, nous avons la capacité d'intervenir partout pour répondre à vos problématiques de communication et de vente. Notre particularité réside dans notre engagement à fournir un travail de qualité, soigné, perfectionniste et toujours avec le souci du détail, tout en suivant les avancées technologiques."}
+              </p>
+            </div>
           </RevealText>
 
           <div className="grid grid-cols-2 gap-6 mt-4">
             <RevealText delay={0.45}>
-              <div className="border-t border-background-300 pt-4">
-                <div className="font-heading text-4xl md:text-5xl font-bold text-foreground-950">
+              <div className="border-t border-background-300 pt-6">
+                <div className="font-heading text-4xl md:text-5xl font-black text-foreground-950">
                   2015
                 </div>
-                <div className="mt-1 text-sm text-foreground-600">
+                <div className="mt-2 text-sm font-semibold tracking-wider text-foreground-500 uppercase">
                   Année de création
                 </div>
               </div>
             </RevealText>
 
             <RevealText delay={0.55}>
-              <div className="border-t border-background-300 pt-4">
-                <div className="font-heading text-4xl md:text-5xl font-bold text-foreground-950">
+              <div className="border-t border-background-300 pt-6">
+                <div className="font-heading text-4xl md:text-5xl font-black text-foreground-950">
                   100<span className="text-primary-500">%</span>
                 </div>
-                <div className="mt-1 text-sm text-foreground-600">
-                  Expertise Kongo-Central
+                <div className="mt-2 text-sm font-semibold tracking-wider text-foreground-500 uppercase">
+                  Expertise Terrain
                 </div>
               </div>
             </RevealText>
           </div>
 
-          <RevealText delay={0.55}>
+          <RevealText delay={0.65}>
             <Link
               to="/what-we-do"
-              className="inline-flex items-center gap-2 text-foreground-950 font-semibold group cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-4 bg-foreground-950 text-white hover:bg-primary-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 group shadow-lg shadow-black/10 hover:shadow-primary-600/30"
             >
               <span>Découvrir nos prestations</span>
-              <span className="w-9 h-9 flex items-center justify-center rounded-full bg-foreground-950 text-background-50 group-hover:bg-primary-500 group-hover:text-background-50 transition-colors">
-                <i className="ri-arrow-right-line"></i>
-              </span>
+              <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
             </Link>
           </RevealText>
         </div>
@@ -948,12 +979,13 @@ function ZoneAction() {
     "Kisantu",
     "Mbanza – Ngungu",
     "Kimpese",
-    "Kwilu – Ngongo",
+    "Kwilu - Ngongo",
     "Matadi",
     "Boma",
     "Lukula",
     "Nsioni",
-    "Moanda"
+    "Moanda",
+    "Luozi"
   ];
 
   return (
@@ -969,23 +1001,10 @@ function ZoneAction() {
           >
             <img
               src="/impact-event-photo.jpg"
-              alt="IMPACT POSITIF — Jonas DIANSANGU"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              alt="IMPACT POSITIF sur le terrain"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-background-950/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-8 left-8 right-8 flex items-center">
-              <motion.span
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="text-sm font-semibold tracking-wider text-white uppercase"
-              >
-                Jonas DIANSANGU
-              </motion.span>
-            </div>
           </motion.div>
         </div>
 
@@ -1074,8 +1093,7 @@ function CTA() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-base text-white/65 leading-relaxed max-w-md mb-8"
           >
-            Vous avez un brief, un défi ou une idée&nbsp;? Notre équipe est
-            prête à vous aider à créer le prochain moment inoubliable.
+            Vous avez un projet ? Notre équipe est prête à apporter des solutions pertinentes et pointues répondant à vos problématiques de communication et de vente.
           </motion.p>
 
           {/* Boutons */}
@@ -2640,11 +2658,31 @@ function ContactView() {
                   Pour toute demande par email
                 </h4>
                 <a
-                  href="mailto:hello@impactpositif.com"
+                  href={`mailto:${globalData?.contactEmail || "contact@impactpositif.com"}`}
                   className="text-xl md:text-2xl font-bold hover:text-primary-300 transition-colors"
                 >
-                  hello@impactpositif.com
+                  {globalData?.contactEmail || "contact@impactpositif.com"}
                 </a>
+              </div>
+
+              <div>
+                <h4 className="text-xs font-mono text-primary-400 uppercase tracking-widest mb-3">
+                  Par téléphone
+                </h4>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href={`tel:${(globalData?.contactPhone1 || "+243818897000").replace(/\s/g, '')}`}
+                    className="text-xl md:text-2xl font-bold hover:text-primary-300 transition-colors"
+                  >
+                    {globalData?.contactPhone1 || "+243 81 889 7000"}
+                  </a>
+                  <a
+                    href={`tel:${(globalData?.contactPhone2 || "+243858493102").replace(/\s/g, '')}`}
+                    className="text-xl md:text-2xl font-bold hover:text-primary-300 transition-colors"
+                  >
+                    {globalData?.contactPhone2 || "+243 85 84 93 102"}
+                  </a>
+                </div>
               </div>
 
               <div>
@@ -2661,11 +2699,11 @@ function ContactView() {
                     </p>
                   </div>
                   <div>
-                    <h5 className="font-bold text-background-50">{locationData?.city || "Matadi"}</h5>
+                    <h5 className="font-bold text-background-50">{locationData?.city || "MATADI"}</h5>
                     <p className="text-sm text-background-100/60 mt-1 leading-relaxed">
-                      Avenue de la Poste
+                      Avenue Masunda Manoki 11 / Ville Haute
                       <br />
-                      Centre-Ville, {locationData?.city || "Matadi"}, RDC
+                      +243 818 897 000 - 850 849 310
                     </p>
                   </div>
                 </div>
@@ -3538,6 +3576,50 @@ function FeaturedProjectHighlight() {
   );
 }
 
+function FieldExpertise() {
+  const expertises = [
+    { title: "Activation Client", description: "Expériences immersives et campagnes d'engagement direct." },
+    { title: "Animation Point de Vente", description: "Dynamisation des ventes et interactions consommateurs." },
+    { title: "Roadshow & Lancement", description: "Tournées promotionnelles sur l'ensemble du territoire." },
+    { title: "Événements Privés & Pro", description: "Organisation sur-mesure de vos rendez-vous stratégiques." },
+  ];
+
+  return (
+    <section className="bg-background-950 text-background-50 py-16 md:py-32 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 md:mb-24">
+          <RevealText delay={0.1}>
+            <span className="inline-block text-xs md:text-sm font-semibold tracking-[0.25em] text-primary-400 uppercase mb-6">
+              Nos Compétences
+            </span>
+          </RevealText>
+          <RevealText delay={0.25}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
+              Notre Expertise <span className="text-primary-500 italic font-light">Terrain</span>
+            </h2>
+          </RevealText>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {expertises.map((item, idx) => (
+            <RevealText key={idx} delay={0.3 + (idx * 0.1)}>
+              <div className="border border-background-50/10 hover:border-primary-500/50 p-8 rounded-2xl bg-background-900/50 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 group cursor-pointer h-full flex flex-col">
+                <div className="w-12 h-12 bg-primary-500/10 text-primary-400 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:text-background-950 transition-colors">
+                  <i className="ri-flashlight-fill text-xl"></i>
+                </div>
+                <h3 className="text-xl font-bold font-heading mb-4 group-hover:text-primary-300 transition-colors">{item.title}</h3>
+                <p className="text-background-100/60 leading-relaxed text-sm mt-auto">
+                  {item.description}
+                </p>
+              </div>
+            </RevealText>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HomeView() {
   return (
     <div className="min-h-screen bg-background-50 text-foreground-950">
@@ -3545,6 +3627,7 @@ function HomeView() {
       <main>
         <Hero />
         <Approach />
+        <FieldExpertise />
         <Marquee />
         <AdBanner position="home-middle" />
         <FeaturedProjects />
@@ -3612,6 +3695,7 @@ export default function App() {
         <Route path="/partenaires" element={<PartenairesView />} />
         <Route path="/our-work/:id" element={<ProjectDetailPage />} />
         <Route path="/mediatheque" element={<MediathequePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFoundView />} />
       </Routes>
     </HashRouter>

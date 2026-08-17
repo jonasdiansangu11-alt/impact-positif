@@ -27,14 +27,17 @@ const MOCK_HERO = {
 };
 
 const MOCK_ABOUT = {
-  whoAreWeContent: "Créée en 2015, IMPACT POSITIF est plus qu'une agence ; c'est un partenaire stratégique. Basés en République Démocratique du Congo, nous fusionnons créativité, technologie et stratégie pour délivrer des campagnes qui marquent les esprits et transforment les marchés.",
-  ourApproachContent: "L'excellence n'est pas une option, c'est notre standard. Nous abordons chaque projet avec une minutie chirurgicale, en alignant notre créativité débordante sur vos objectifs d'affaires les plus ambitieux."
+  whoAreWeContent: "Créée en 2015, IMPACT POSITIF est une Agence Conseil en Marketing spécialisée dans la communication, la stratégie marketing et l'accompagnement des entreprises. Nous prenons le temps de comprendre parfaitement la structure de nos clients, leurs atouts et leurs objectifs avant de proposer une solution sur-mesure, alignée sur leurs valeurs et leur image.",
+  ourApproachContent: "L'excellence n'est pas une option, c'est notre standard. Nous abordons chaque projet avec une minutie chirurgicale, en alignant notre créativité débordante sur vos objectifs d'affaires les plus ambitieux.",
+  ourRoleTitle: "NOTRE RÔLE",
+  ourRoleContent: "Grâce à notre équipe jeune et dynamique, nous avons la capacité d'intervenir partout pour répondre à vos problématiques de communication et de vente. Notre particularité réside dans notre engagement à fournir un travail de qualité, soigné, perfectionniste et toujours avec le souci du détail, tout en suivant les avancées technologiques."
 };
 
 const MOCK_SERVICES = [
-  { documentId: "1", title: "Activation Client", description: "Des actions ciblées pour engager directement votre audience et créer une connexion authentique avec votre marque.", image: "/images/activation-clients.png", capabilities: "Communication one to one,Animation / Road Show,Productions médias" },
-  { documentId: "2", title: "Activation Commerce", description: "Des stratégies marketing pointues pour dynamiser vos ventes et optimiser votre présence sur le point de vente.", image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1600", capabilities: "Animation Point de Vente,Retail audit,Conception publicitaire" },
-  { documentId: "3", title: "Événementiel", description: "Création et gestion globale de vos événements, pour offrir des expériences mémorables et impactantes.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1600", capabilities: "Conception,Événement privé,Événement d'entreprise" }
+  { documentId: "1", title: "Activation", description: "Des actions ciblées pour engager directement votre audience sur le terrain.", image: "/images/activation-clients.png", capabilities: "Activation client,Communication one-to-one,Animation / Roadshow" },
+  { documentId: "2", title: "Commerce", description: "Des stratégies marketing et commerciales pointues pour dynamiser vos ventes.", image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1600", capabilities: "Retail audit,Merchandising,Animation de point de vente" },
+  { documentId: "3", title: "Communication", description: "Des solutions de communication pour renforcer votre image de marque.", image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=1600", capabilities: "Conception publicitaire,Productions médias" },
+  { documentId: "4", title: "Événementiel", description: "Création et gestion globale de vos événements d'entreprise et privés.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1600", capabilities: "Conception et gestion d'événements,Événement privé,Événement d'entreprise" }
 ];
 
 const MOCK_LOCATION = {
@@ -45,7 +48,9 @@ const MOCK_LOCATION = {
 
 const MOCK_GLOBAL = {
   siteName: "IMPACT POSITIF",
-  contactEmail: "hello@impactpositif.com"
+  contactEmail: "contact@impactpositif.com",
+  contactPhone1: "+243 81 889 7000",
+  contactPhone2: "+243 85 84 93 102"
 };
 
 const MOCK_TESTIMONIALS = [
@@ -55,10 +60,13 @@ const MOCK_TESTIMONIALS = [
 ];
 
 const MOCK_REALIZATIONS = [
-  { documentId: "forum-eco", title: "Forum Économique de Kinshasa 2025", category: "Sommet d'Affaires", summary: "Production intégrale, scénographie immersive 360° et expériences VIP.", location: "Centre Financier, Kinshasa", image: "/images/IMG_3294.jpg" },
-  { documentId: "finance", title: "Sommet de la Finance Africaine", category: "Conférence Financière", summary: "Pavillon interactif de 800 m² avec démonstrations en direct.", location: "Pullman Hotel, Kinshasa", image: "/images/IMG_3247.jpg" },
-  { documentId: "tech-expo", title: "RDC Tech Innovation Expo", category: "Activation de Marque", summary: "Tournée technologique majeure à travers 5 villes.", location: "Tournée Nationale, RDC", image: "/images/IMG_3225.jpg" },
-  { documentId: "gala", title: "Gala National de l'Excellence", category: "Soirée de Prestige", summary: "Direction artistique raffinée et retransmission en direct.", location: "Fleuve Congo Hotel, Kinshasa", image: "/images/IMG_3079.jpg" }
+  { documentId: "canal-luozi", title: "Activité LUOZI", category: "Activation", summary: "Opération de visibilité et d'activation terrain pour la marque.", location: "Luozi", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1600", client: "Canal+" },
+  { documentId: "bcc-matadi", title: "Lancement BCC", category: "Événementiel", summary: "Organisation et gestion globale de la cérémonie de lancement officiel.", location: "Matadi", image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1600", client: "BCC" },
+  { documentId: "canal-can-2019", title: "Lancement CAN 2016 & 2019", category: "Événementiel", summary: "Expériences immersives et diffusion des matchs de la Coupe d'Afrique des Nations.", location: "Kongo-Central", image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1600", client: "Canal+" },
+  { documentId: "coca-cola-copa", title: "Lancement Copa Coca-Cola", category: "Événement Sportif", summary: "Coordination des activités de lancement de la compétition sportive.", location: "Kongo-Central", image: "https://images.unsplash.com/photo-1518605368461-1ee7e55ac96c?auto=format&fit=crop&q=80&w=1600", client: "Coca-Cola" },
+  { documentId: "premierbet-jackpot", title: "Méga Millions & Lancement Jackpot", category: "Activation", summary: "Remises de jackpot et déploiement promotionnel à travers la province.", location: "Kongo-Central", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1600", client: "PremierBet" },
+  { documentId: "airtel-recrutement", title: "Recrutement Agents Terrain", category: "Ressources Humaines", summary: "Campagne de recrutement et formation d'agents pour le déploiement des activités commerciales.", location: "Kongo-Central", image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1600", client: "Airtel" },
+  { documentId: "expo-entreprise", title: "Salon Expo d'Entreprise", category: "Événementiel", summary: "Création et gestion de stands professionnels pour divers clients.", location: "RDC", image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&q=80&w=1600", client: "Divers" }
 ];
 
 const MOCK_FEATURED_PROJECT = {

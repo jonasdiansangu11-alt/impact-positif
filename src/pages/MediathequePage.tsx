@@ -3,6 +3,7 @@ import { fetchMediatheque, getStrapiMediaUrl } from '../lib/api';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Seo from '../components/seo/Seo';
+import InteractiveImageBentoGallery from '../components/ui/bento-gallery';
 
 export default function MediathequePage() {
   const [medias, setMedias] = useState<any[]>([]);
@@ -99,50 +100,82 @@ export default function MediathequePage() {
               ))}
             </div>
 
-            {/* Masonry Grid */}
-            <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-              {filteredMedias.map((media, i) => {
-                const isStrapiFormat = media.attributes;
-                const attr = isStrapiFormat ? media.attributes : media;
-                const fileObj = attr.file;
-                
-                const mediaUrl = typeof fileObj === 'string' ? fileObj : getStrapiMediaUrl(fileObj);
-                const isVideo = fileObj?.mime?.startsWith('video/') || (typeof mediaUrl === 'string' && mediaUrl.match(/\.(mp4|webm)$/i));
-
-                if (!mediaUrl) return null;
-
-                return (
-                  <div key={media.id || i} className="relative group overflow-hidden rounded-xl bg-background-900 border border-background-50/5 break-inside-avoid">
-                    {isVideo ? (
-                      <video 
-                        src={mediaUrl} 
-                        className="w-full h-auto object-cover"
-                        controls
-                        muted
-                        loop
-                      />
-                    ) : (
-                      <img 
-                        src={mediaUrl} 
-                        alt={attr.title || "Media"} 
-                        loading="lazy"
-                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                    )}
+            {/* Gallery / Grid */}
+            {activeType === "photo" ? (
+              <div className="w-full">
+                <InteractiveImageBentoGallery 
+                  imageItems={filteredMedias.map((media, i) => {
+                    const attr = media.attributes || media;
+                    const fileObj = attr.file;
+                    const mediaUrl = typeof fileObj === 'string' ? fileObj : getStrapiMediaUrl(fileObj);
                     
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background-950 via-background-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
-                      <span className="text-red-400 text-xs font-mono tracking-widest uppercase mb-2">
-                        {attr.category}
-                      </span>
-                      <h3 className="text-lg font-bold text-white leading-tight">
-                        {attr.title}
-                      </h3>
+                    const spans = [
+                      "md:col-span-2 md:row-span-2",
+                      "md:row-span-1",
+                      "md:row-span-1",
+                      "md:row-span-2",
+                      "md:row-span-1",
+                      "md:col-span-2 md:row-span-1",
+                    ];
+                    const span = spans[i % spans.length];
+
+                    return {
+                      id: media.id || i,
+                      title: attr.title || "Photo",
+                      desc: attr.category || "",
+                      url: mediaUrl || "",
+                      span: span
+                    };
+                  }).filter(item => item.url)}
+                  title=""
+                  description=""
+                />
+              </div>
+            ) : (
+              <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+                {filteredMedias.map((media, i) => {
+                  const isStrapiFormat = media.attributes;
+                  const attr = isStrapiFormat ? media.attributes : media;
+                  const fileObj = attr.file;
+                  
+                  const mediaUrl = typeof fileObj === 'string' ? fileObj : getStrapiMediaUrl(fileObj);
+                  const isVideo = fileObj?.mime?.startsWith('video/') || (typeof mediaUrl === 'string' && mediaUrl.match(/\.(mp4|webm)$/i));
+
+                  if (!mediaUrl) return null;
+
+                  return (
+                    <div key={media.id || i} className="relative group overflow-hidden rounded-xl bg-background-900 border border-background-50/5 break-inside-avoid">
+                      {isVideo ? (
+                        <video 
+                          src={mediaUrl} 
+                          className="w-full h-auto object-cover"
+                          controls
+                          muted
+                          loop
+                        />
+                      ) : (
+                        <img 
+                          src={mediaUrl} 
+                          alt={attr.title || "Media"} 
+                          loading="lazy"
+                          className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                      )}
+                      
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-background-950 via-background-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+                        <span className="text-red-400 text-xs font-mono tracking-widest uppercase mb-2">
+                          {attr.category}
+                        </span>
+                        <h3 className="text-lg font-bold text-white leading-tight">
+                          {attr.title}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            )}
             
             {filteredMedias.length === 0 && (
               <div className="text-center py-20 text-background-100/40 font-mono">
