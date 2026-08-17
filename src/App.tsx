@@ -5,7 +5,7 @@ import ProjectDetailPage from "./pages/ProjectDetailPage";
 import MediathequePage from './pages/MediathequePage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Seo from './components/seo/Seo';
-import CustomCursor from './components/ui/CustomCursor';
+
 import React, { useState, useEffect, useRef } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,7 +15,7 @@ import TestimonialsSection from "./components/ui/testimonial-v2";
 import AdBanner from "./components/ui/AdBanner";
 import Preloader from "./components/ui/Preloader";
 import WhatsAppButton from "./components/ui/WhatsAppButton";
-import InstallPrompt from "./components/ui/InstallPrompt";
+
 
 // Core Projects List
 const projects: Project[] = [
@@ -3715,12 +3715,12 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <HashRouter>
-      <CustomCursor />
+      
       <Seo />
       <ConnectionIndicator />
       <Preloader />
       <WhatsAppButton />
-      <InstallPrompt />
+      
       <ScrollToTop />
       <AnimatedRoutes />
     </HashRouter>
