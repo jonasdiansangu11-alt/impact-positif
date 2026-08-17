@@ -1491,7 +1491,7 @@ Message: ${data.message || ''}`);
                 </div>
 
                 {/* Content */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-28 md:pt-0">
                   <div
                     className={`lg:col-span-7 transition-all duration-1000 delay-300 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   >
@@ -1602,7 +1602,7 @@ Message: ${data.message || ''}`);
                 </div>
 
                 {/* Content */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pt-16">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pt-32 md:pt-16">
                   {/* Left Column: Coordinates */}
                   <div
                     className={`transition-all duration-1000 delay-300 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -2276,7 +2276,7 @@ function RealisationsView() {
                 </div>
 
                 {/* Content */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pt-16">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pt-32 md:pt-16">
                   {/* Left Column: Coordinates */}
                   <div
                     className={`transition-all duration-1000 delay-300 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}

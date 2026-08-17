@@ -154,7 +154,7 @@ export default function Header() {
               className="flex items-center cursor-pointer hover:opacity-90 transition-opacity"
               aria-label="IMPACT POSITIF home"
             >
-              <img src="/images/logo.png" alt="IMPACT POSITIF Logo" className="h-12 sm:h-16 lg:h-20 w-auto object-contain drop-shadow-md" />
+              <img src="/images/logo.png" alt="IMPACT POSITIF Logo" className="h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-md" />
             </Link>
           </div>
 
