@@ -31,6 +31,15 @@
     },
     "videoUrl": {
       "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "json"
     }
   }
 }

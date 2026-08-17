@@ -11,6 +11,7 @@ export default ({ env }: Core.Config.Shared.ConfigParams) => ({
       },
       actionOptions: {
         upload: {},
+        uploadStream: {},
         delete: {},
       },
     },

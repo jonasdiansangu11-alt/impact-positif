@@ -5,9 +5,10 @@ import ProjectDetailPage from "./pages/ProjectDetailPage";
 import MediathequePage from './pages/MediathequePage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Seo from './components/seo/Seo';
+import CustomCursor from './components/ui/CustomCursor';
 import React, { useState, useEffect, useRef } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Project, NavLink } from "./types";
 import { fetchHero, fetchAbout, fetchServices, fetchLocation, fetchGlobal, fetchTestimonials, fetchRealizations, fetchAds, fetchFeaturedProject, submitMessage, getStrapiMediaUrl } from "./lib/api";
 import TestimonialsSection from "./components/ui/testimonial-v2";
@@ -3676,28 +3677,52 @@ function NotFoundView() {
   );
 }
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><HomeView /></PageTransition>} />
+        <Route path="/what-we-do" element={<PageTransition><PrestationsView /></PageTransition>} />
+        <Route path="/our-work" element={<PageTransition><RealisationsView /></PageTransition>} />
+        <Route path="/solutions" element={<PageTransition><PrestationsView /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><ContactView /></PageTransition>} />
+        <Route path="/partenaires" element={<PageTransition><PartenairesView /></PageTransition>} />
+        <Route path="/our-work/:id" element={<PageTransition><ProjectDetailPage /></PageTransition>} />
+        <Route path="/mediatheque" element={<PageTransition><MediathequePage /></PageTransition>} />
+        <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+        <Route path="*" element={<PageTransition><NotFoundView /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+function PageTransition({ children }: { children: React.ReactNode }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 // Router Setup
 export default function App() {
   return (
     <HashRouter>
+      <CustomCursor />
       <Seo />
       <ConnectionIndicator />
       <Preloader />
       <WhatsAppButton />
       <InstallPrompt />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/what-we-do" element={<PrestationsView />} />
-        <Route path="/our-work" element={<RealisationsView />} />
-        <Route path="/solutions" element={<PrestationsView />} />
-        <Route path="/contact" element={<ContactView />} />
-        <Route path="/partenaires" element={<PartenairesView />} />
-        <Route path="/our-work/:id" element={<ProjectDetailPage />} />
-        <Route path="/mediatheque" element={<MediathequePage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="*" element={<NotFoundView />} />
-      </Routes>
+      <AnimatedRoutes />
     </HashRouter>
   );
 
