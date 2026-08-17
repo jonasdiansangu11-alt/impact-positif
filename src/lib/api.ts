@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || "http://localhost:1337";
+const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || "https://impact-positif-api.onrender.com";
 const API_URL = `${STRAPI_URL}/api`;
 
 export function getStrapiMediaUrl(media: any): string | null {
