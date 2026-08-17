@@ -224,7 +224,7 @@ function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden bg-black z-0">
         {heroData?.videoFile || heroData?.videoUrl ? (
           <video
-            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[1.35] pointer-events-none object-cover"
+            className="absolute top-1/2 left-1/2 w-full h-[56.25vw] min-h-screen min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[1.35] pointer-events-none object-cover"
             src={getStrapiMediaUrl(heroData?.videoFile) || heroData?.videoUrl}
             poster={getStrapiMediaUrl(heroData?.posterImage) || heroData?.posterUrl}
             autoPlay
@@ -237,7 +237,7 @@ function Hero() {
           />
         ) : (
           <iframe
-            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[1.35] pointer-events-none"
+            className="absolute top-1/2 left-1/2 w-full h-[56.25vw] min-h-screen min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[1.35] pointer-events-none"
             src="https://www.youtube.com/embed/0W3s4yotSBs?autoplay=1&mute=1&loop=1&playlist=0W3s4yotSBs&controls=0&showinfo=0&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             style={{
