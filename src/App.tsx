@@ -2686,29 +2686,7 @@ function ContactView() {
                 </div>
               </div>
 
-              <div>
-                <h4 className="text-xs font-mono text-primary-400 uppercase tracking-widest mb-4">
-                  Nos implantations
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="font-bold text-background-50">Kinshasa</h5>
-                    <p className="text-sm text-background-100/60 mt-1 leading-relaxed">
-                      Boulevard du 30 Juin
-                      <br />
-                      Gombe, Kinshasa, RDC
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-background-50">{locationData?.city || "MATADI"}</h5>
-                    <p className="text-sm text-background-100/60 mt-1 leading-relaxed">
-                      Avenue Masunda Manoki 11 / Ville Haute
-                      <br />
-                      +243 818 897 000 - 850 849 310
-                    </p>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
 
