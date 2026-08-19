@@ -1484,7 +1484,7 @@ Message: ${data.message || ''}`);
                 </div>
 
                 {/* Content */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-28 md:pt-0">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-32 md:pt-16">
                   <div
                     className={`lg:col-span-7 transition-all duration-1000 delay-300 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   >
@@ -1754,7 +1754,7 @@ Message: ${data.message || ''}`);
               </div>
 
               {/* Grid content */}
-              <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center pt-32 md:pt-16">
                 {/* Left Side: Number, Title, Subtitle */}
                 <div
                   className={`lg:col-span-6 transition-all duration-1000 delay-200 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
@@ -1836,16 +1836,15 @@ Message: ${data.message || ''}`);
 
           {/* Navigation Links */}
           <nav className="flex flex-col gap-4 sm:gap-6 my-auto">
-            {[
-              { label: "Accueil", href: "/" },
-              { label: "Réalisations", href: "/our-work" },
-              { label: "Services", href: "/solutions" },
-              { label: "Nos prestations", href: "/what-we-do" },
-              { label: "Qui sommes-nous", href: "/who-we-are" },
-              { label: "IMPACT Feed", href: "/impact-feed" },
-              { label: "Carrières", href: "/careers" },
-              { label: "Contact", href: "/contact" },
-            ].map((item) => (
+                          {[
+                { label: "Accueil", href: "/" },
+                { label: "R�alisations", href: "/our-work" },
+                { label: "Services", href: "/solutions" },
+                { label: "M�diath�que", href: "/mediatheque" },
+                { label: "Prestataires", href: "/partenaires" },
+                { label: "Contact", href: "/contact" },
+                { label: "Boutique en ligne", href: "https://app.chariow.com/stores/store_lsrffcalbjtu/products?status=all" }
+              ].map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
@@ -2178,7 +2177,7 @@ function RealisationsView() {
                 </div>
 
                 {/* Content */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-32 md:pt-16">
                   <div
                     className={`lg:col-span-7 transition-all duration-1000 delay-300 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   >
@@ -2440,7 +2439,7 @@ function RealisationsView() {
               </div>
 
               {/* Grid content */}
-              <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              <div className="w-full max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center pt-32 md:pt-16">
                 {/* Left Side: Category, Title, Subtitle */}
                 <div
                   className={`lg:col-span-6 transition-all duration-1000 delay-200 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
@@ -2523,16 +2522,15 @@ function RealisationsView() {
 
           {/* Navigation Links */}
           <nav className="flex flex-col gap-4 sm:gap-6 my-auto">
-            {[
-              { label: "Accueil", href: "/" },
-              { label: "Réalisations", href: "/our-work" },
-              { label: "Services", href: "/solutions" },
-              { label: "Nos prestations", href: "/what-we-do" },
-              { label: "Qui sommes-nous", href: "/who-we-are" },
-              { label: "IMPACT Feed", href: "/impact-feed" },
-              { label: "Carrières", href: "/careers" },
-              { label: "Contact", href: "/contact" },
-            ].map((item) => (
+                          {[
+                { label: "Accueil", href: "/" },
+                { label: "R�alisations", href: "/our-work" },
+                { label: "Services", href: "/solutions" },
+                { label: "M�diath�que", href: "/mediatheque" },
+                { label: "Prestataires", href: "/partenaires" },
+                { label: "Contact", href: "/contact" },
+                { label: "Boutique en ligne", href: "https://app.chariow.com/stores/store_lsrffcalbjtu/products?status=all" }
+              ].map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
